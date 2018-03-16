@@ -20,7 +20,6 @@
 						longA: $('#longA').val(),
 						 latB : $('#latB').val(),
 						longB: $('#longB').val()
-						
                     },
                     success : function (result){
                         $('#result').html(result);
