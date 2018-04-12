@@ -37,13 +37,13 @@ public class MainActivity extends AppCompatActivity {
         btnClear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 edtEur.setText("");
                 edtUsd.setText("");
                 edtVnd.setText("");
 
-                edtVnd.setHint("Enter VND amount");
-                edtUsd.setHint("Enter USD amount");
-                edtEur.setHint("Enter EUR amount");
+                XoaHint();
+
             }
         });
         // Convert USD to VND, EUR
@@ -66,6 +66,9 @@ public class MainActivity extends AppCompatActivity {
                     edtVnd.setHint(decimalFormat.format(vnd));
                     edtEur.setHint(decimalFormat.format(eur));
 
+                }
+                else {
+                    XoaHint();
                 }
             }
 
@@ -97,6 +100,9 @@ public class MainActivity extends AppCompatActivity {
                        edtUsd.setHint(decimalFormat.format(usd));
                        edtEur.setHint(decimalFormat.format(eur));
                    }
+               }
+               else {
+                   XoaHint();
                }
            }
 
@@ -130,6 +136,10 @@ public class MainActivity extends AppCompatActivity {
                         edtUsd.setHint(decimalFormat.format(usd));
                         edtVnd.setHint(decimalFormat.format(vnd));
                     }
+
+                }
+                else{
+                    XoaHint();
                 }
 
             }
@@ -140,6 +150,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    private void XoaHint(){
+
+        edtVnd.setHint("Enter VND amount");
+        edtUsd.setHint("Enter USD amount");
+        edtEur.setHint("Enter EUR amount");
     }
 
     private void addViews() {
